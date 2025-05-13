@@ -37,12 +37,27 @@ export default function Header() {
           </div>
           
           <nav className="hidden md:flex space-x-8 items-center">
-            <a href="#services" className="font-medium text-neutral-800 hover:text-secondary transition">Services</a>
-            <a href="#vehicles" className="font-medium text-neutral-800 hover:text-secondary transition">Vehicles</a>
-            <a href="#pricing" className="font-medium text-neutral-800 hover:text-secondary transition">Pricing</a>
-            <a href="#about" className="font-medium text-neutral-800 hover:text-secondary transition">About</a>
-            <a href="#contact" className="font-medium text-neutral-800 hover:text-secondary transition">Contact</a>
-            <a href="#booking" className="bg-accent text-white px-4 py-2 rounded-md hover:bg-accent-dark transition">Book Now</a>
+            <a href="#services" className="font-medium text-neutral-800 hover:text-secondary transition-all duration-300 hover:scale-105 relative group">
+              Services
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#vehicles" className="font-medium text-neutral-800 hover:text-secondary transition-all duration-300 hover:scale-105 relative group">
+              Vehicles
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#pricing" className="font-medium text-neutral-800 hover:text-secondary transition-all duration-300 hover:scale-105 relative group">
+              Pricing
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#about" className="font-medium text-neutral-800 hover:text-secondary transition-all duration-300 hover:scale-105 relative group">
+              About
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#contact" className="font-medium text-neutral-800 hover:text-secondary transition-all duration-300 hover:scale-105 relative group">
+              Contact
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#booking" className="bg-accent text-white px-4 py-2 rounded-md hover:bg-accent-dark transition-all duration-300 hover:scale-105 hover:shadow-lg transform">Book Now</a>
           </nav>
           
           <button 
@@ -59,42 +74,57 @@ export default function Header() {
           <div className="flex flex-col space-y-3 py-3">
             <a 
               href="#services" 
-              className="font-medium text-neutral-800 hover:text-secondary transition px-2 py-1"
+              className="font-medium text-neutral-800 hover:text-secondary transition-all duration-300 px-2 py-1 hover:pl-4 hover:bg-neutral-100 rounded-md flex items-center"
               onClick={() => setMobileMenuOpen(false)}
             >
+              <span className="w-0 overflow-hidden transition-all duration-300 group-hover:w-5 text-primary">
+                <i className="fas fa-chevron-right mr-2 opacity-0 group-hover:opacity-100"></i>
+              </span>
               Services
             </a>
             <a 
               href="#vehicles" 
-              className="font-medium text-neutral-800 hover:text-secondary transition px-2 py-1"
+              className="font-medium text-neutral-800 hover:text-secondary transition-all duration-300 px-2 py-1 hover:pl-4 hover:bg-neutral-100 rounded-md flex items-center"
               onClick={() => setMobileMenuOpen(false)}
             >
+              <span className="w-0 overflow-hidden transition-all duration-300 group-hover:w-5 text-primary">
+                <i className="fas fa-chevron-right mr-2 opacity-0 group-hover:opacity-100"></i>
+              </span>
               Vehicles
             </a>
             <a 
               href="#pricing" 
-              className="font-medium text-neutral-800 hover:text-secondary transition px-2 py-1"
+              className="font-medium text-neutral-800 hover:text-secondary transition-all duration-300 px-2 py-1 hover:pl-4 hover:bg-neutral-100 rounded-md flex items-center"
               onClick={() => setMobileMenuOpen(false)}
             >
+              <span className="w-0 overflow-hidden transition-all duration-300 group-hover:w-5 text-primary">
+                <i className="fas fa-chevron-right mr-2 opacity-0 group-hover:opacity-100"></i>
+              </span>
               Pricing
             </a>
             <a 
               href="#about" 
-              className="font-medium text-neutral-800 hover:text-secondary transition px-2 py-1"
+              className="font-medium text-neutral-800 hover:text-secondary transition-all duration-300 px-2 py-1 hover:pl-4 hover:bg-neutral-100 rounded-md flex items-center"
               onClick={() => setMobileMenuOpen(false)}
             >
+              <span className="w-0 overflow-hidden transition-all duration-300 group-hover:w-5 text-primary">
+                <i className="fas fa-chevron-right mr-2 opacity-0 group-hover:opacity-100"></i>
+              </span>
               About
             </a>
             <a 
               href="#contact" 
-              className="font-medium text-neutral-800 hover:text-secondary transition px-2 py-1"
+              className="font-medium text-neutral-800 hover:text-secondary transition-all duration-300 px-2 py-1 hover:pl-4 hover:bg-neutral-100 rounded-md flex items-center"
               onClick={() => setMobileMenuOpen(false)}
             >
+              <span className="w-0 overflow-hidden transition-all duration-300 group-hover:w-5 text-primary">
+                <i className="fas fa-chevron-right mr-2 opacity-0 group-hover:opacity-100"></i>
+              </span>
               Contact
             </a>
             <a 
               href="#booking" 
-              className="bg-accent text-white px-4 py-2 rounded-md hover:bg-accent-dark transition text-center"
+              className="bg-accent text-white px-4 py-2 rounded-md hover:bg-accent-dark transition-all duration-300 text-center hover:shadow-md transform hover:translate-y-[-2px]"
               onClick={() => setMobileMenuOpen(false)}
             >
               Book Now

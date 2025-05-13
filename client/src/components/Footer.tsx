@@ -21,21 +21,66 @@ export default function Footer() {
           <div>
             <h3 className="font-heading font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#services" className="text-neutral-300 hover:text-white transition">Services</a></li>
-              <li><a href="#vehicles" className="text-neutral-300 hover:text-white transition">Vehicles</a></li>
-              <li><a href="#pricing" className="text-neutral-300 hover:text-white transition">Pricing</a></li>
-              <li><a href="#about" className="text-neutral-300 hover:text-white transition">About Us</a></li>
-              <li><a href="#contact" className="text-neutral-300 hover:text-white transition">Contact</a></li>
+              <li>
+                <a href="#services" className="text-neutral-300 hover:text-white transition-all duration-300 flex items-center group">
+                  <span className="transform translate-x-0 group-hover:translate-x-2 transition-transform duration-300">Services</span>
+                  <i className="fas fa-chevron-right ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#vehicles" className="text-neutral-300 hover:text-white transition-all duration-300 flex items-center group">
+                  <span className="transform translate-x-0 group-hover:translate-x-2 transition-transform duration-300">Vehicles</span>
+                  <i className="fas fa-chevron-right ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#pricing" className="text-neutral-300 hover:text-white transition-all duration-300 flex items-center group">
+                  <span className="transform translate-x-0 group-hover:translate-x-2 transition-transform duration-300">Pricing</span>
+                  <i className="fas fa-chevron-right ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#about" className="text-neutral-300 hover:text-white transition-all duration-300 flex items-center group">
+                  <span className="transform translate-x-0 group-hover:translate-x-2 transition-transform duration-300">About Us</span>
+                  <i className="fas fa-chevron-right ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="text-neutral-300 hover:text-white transition-all duration-300 flex items-center group">
+                  <span className="transform translate-x-0 group-hover:translate-x-2 transition-transform duration-300">Contact</span>
+                  <i className="fas fa-chevron-right ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                </a>
+              </li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-heading font-semibold text-lg mb-4">Legal</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-neutral-300 hover:text-white transition">Terms of Service</a></li>
-              <li><a href="#" className="text-neutral-300 hover:text-white transition">Privacy Policy</a></li>
-              <li><a href="#" className="text-neutral-300 hover:text-white transition">Cookie Policy</a></li>
-              <li><a href="#" className="text-neutral-300 hover:text-white transition">FAQ</a></li>
+              <li>
+                <a href="#" className="text-neutral-300 hover:text-white transition-all duration-300 flex items-center group">
+                  <span className="transform translate-x-0 group-hover:translate-x-2 transition-transform duration-300">Terms of Service</span>
+                  <i className="fas fa-chevron-right ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-neutral-300 hover:text-white transition-all duration-300 flex items-center group">
+                  <span className="transform translate-x-0 group-hover:translate-x-2 transition-transform duration-300">Privacy Policy</span>
+                  <i className="fas fa-chevron-right ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-neutral-300 hover:text-white transition-all duration-300 flex items-center group">
+                  <span className="transform translate-x-0 group-hover:translate-x-2 transition-transform duration-300">Cookie Policy</span>
+                  <i className="fas fa-chevron-right ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-neutral-300 hover:text-white transition-all duration-300 flex items-center group">
+                  <span className="transform translate-x-0 group-hover:translate-x-2 transition-transform duration-300">FAQ</span>
+                  <i className="fas fa-chevron-right ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                </a>
+              </li>
             </ul>
           </div>
           
