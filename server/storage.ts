@@ -1,3 +1,4 @@
+// server/storage.ts
 import { 
   users, type User, type InsertUser,
   type Booking, type InsertBooking,

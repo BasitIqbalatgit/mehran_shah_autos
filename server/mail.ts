@@ -1,3 +1,4 @@
+// server/mail.ts
 import { type InsertBooking, type InsertContact } from "@shared/schema";
 
 // In a real-world application, this would use a proper email service like Nodemailer
