@@ -75,68 +75,70 @@ export default function Contact() {
               <Map />
               
               {/* Animated Location Pin */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-accent text-5xl animate-bounce">
-                <i className="fas fa-map-marker-alt"></i>
-              </div>
+              {/* Map pin is now handled within the Map component */}
               
-              <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-md">
-                <h3 className="font-heading font-semibold text-secondary mb-2">Our Location</h3>
-                <p className="text-neutral-800">Main Showroom: Block 7, Gulshan-e-Iqbal, Karachi, Pakistan</p>
-                <div className="mt-2 flex space-x-4">
+              <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-3 md:p-4 rounded-lg shadow-md">
+                <h3 className="font-heading font-semibold text-secondary text-sm md:text-base mb-1 md:mb-2">Our Location</h3>
+                <p className="text-neutral-800 text-xs md:text-sm">Main Showroom: Block 7, Gulshan-e-Iqbal, Karachi, Pakistan</p>
+                <div className="mt-1 md:mt-2 flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
                   <a 
                     href="https://maps.google.com/?q=Block+7+Gulshan+e+Iqbal+Karachi+Pakistan" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-sm bg-secondary text-white px-3 py-1 rounded-full"
+                    className="text-xs md:text-sm bg-secondary text-white px-3 py-1 rounded-full text-center hover:bg-secondary-dark transition-colors"
                   >
-                    Get Directions
+                    <i className="fas fa-directions mr-1"></i> Get Directions
                   </a>
-                  <button className="text-sm bg-primary text-secondary px-3 py-1 rounded-full">
-                    View Branches
+                  <button className="text-xs md:text-sm bg-primary text-secondary px-3 py-1 rounded-full hover:bg-primary-dark transition-colors">
+                    <i className="fas fa-building mr-1"></i> View Branches
                   </button>
                 </div>
               </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mt-6">
               {/* Address */}
-              <div className="bg-white p-4 rounded-lg shadow-md">
-                <div className="text-secondary text-2xl mb-2">
+              <div className="bg-white p-4 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                <div className="text-secondary text-xl md:text-2xl mb-2">
                   <i className="fas fa-map-marker-alt"></i>
                 </div>
-                <h4 className="font-heading font-medium text-lg text-secondary mb-1">Address</h4>
-                <p className="text-sm text-neutral-800">
+                <h4 className="font-heading font-medium text-base md:text-lg text-secondary mb-1">Address</h4>
+                <p className="text-xs md:text-sm text-neutral-800">
                   Block 7, Gulshan-e-Iqbal,<br />
                   Karachi, Pakistan
                 </p>
               </div>
               
               {/* Phone */}
-              <div className="bg-white p-4 rounded-lg shadow-md">
-                <div className="text-secondary text-2xl mb-2">
+              <div className="bg-white p-4 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                <div className="text-secondary text-xl md:text-2xl mb-2">
                   <i className="fas fa-phone-alt"></i>
                 </div>
-                <h4 className="font-heading font-medium text-lg text-secondary mb-1">Phone</h4>
-                <p className="text-sm text-neutral-800">
-                  <a href="tel:+923331234567" className="hover:text-accent transition">+92 333 1234567</a><br />
-                  <a href="tel:+922134567890" className="hover:text-accent transition">+92 21 34567890</a>
-                </p>
+                <h4 className="font-heading font-medium text-base md:text-lg text-secondary mb-1">Phone</h4>
+                <div className="text-xs md:text-sm text-neutral-800 space-y-1">
+                  <a href="tel:+923331234567" className="hover:text-accent transition block">
+                    <span className="text-neutral-500 mr-1">Sales:</span> +92 333 1234567
+                  </a>
+                  <a href="tel:+922134567890" className="hover:text-accent transition block">
+                    <span className="text-neutral-500 mr-1">Support:</span> +92 21 34567890
+                  </a>
+                </div>
               </div>
               
               {/* Email */}
-              <div className="bg-white p-4 rounded-lg shadow-md">
-                <div className="text-secondary text-2xl mb-2">
+              <div className="bg-white p-4 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                <div className="text-secondary text-xl md:text-2xl mb-2">
                   <i className="fas fa-envelope"></i>
                 </div>
-                <h4 className="font-heading font-medium text-lg text-secondary mb-1">Email</h4>
-                <p className="text-sm text-neutral-800">
-                  <a href="mailto:contact@mehranshahautos.com" className="hover:text-accent transition">
+                <h4 className="font-heading font-medium text-base md:text-lg text-secondary mb-1">Email</h4>
+                <div className="text-xs md:text-sm text-neutral-800 space-y-1">
+                  <a href="mailto:contact@mehranshahautos.com" className="hover:text-accent transition block truncate">
                     contact@mehranshahautos.com
-                  </a><br />
-                  <a href="mailto:info@mehranshahautos.com" className="hover:text-accent transition">
+                  </a>
+                  <a href="mailto:info@mehranshahautos.com" className="hover:text-accent transition block truncate">
                     info@mehranshahautos.com
                   </a>
-                </p>
+                </div>
               </div>
             </div>
           </div>

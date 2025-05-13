@@ -1,7 +1,18 @@
-import { cn } from "@/lib/utils";
-import Car from "./3d/Car";
+import { useState } from "react";
+import { cn, vehicleModels, VehicleModel } from "@/lib/utils";
+import { VehicleImageSlider } from "./VehicleImageSlider";
 
 export default function Hero() {
+  // Combine all vehicle types into one array for the hero slider
+  const allVehicles = [
+    ...vehicleModels.economy.slice(0, 1),
+    ...vehicleModels.luxury.slice(0, 1),
+    ...vehicleModels.suv.slice(0, 1),
+    ...vehicleModels.commercial.slice(0, 1)
+  ];
+  
+  const [selectedVehicle, setSelectedVehicle] = useState<VehicleModel | null>(null);
+
   return (
     <section className="pt-24 pb-16 md:py-32 bg-gradient-to-r from-secondary to-secondary-dark text-white overflow-hidden relative">
       <div className="absolute inset-0 opacity-20">
@@ -15,7 +26,7 @@ export default function Hero() {
               <span className="block text-primary">Driving Innovation</span>
             </h1>
             <p className="text-lg mb-8 max-w-xl">
-              From the iconic Suzuki Mehran to modern luxury vehicles, we bridge trusted heritage with cutting-edge automotive solutions.
+              From iconic classics to modern luxury vehicles, we bridge trusted heritage with cutting-edge automotive solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
@@ -41,8 +52,11 @@ export default function Hero() {
           
           <div className="md:w-1/2 flex justify-center">
             <div className="w-full max-w-md h-64 md:h-80 relative bg-secondary-light rounded-lg shadow-md overflow-hidden">
-              {/* Simplified Car Component */}
-              <Car color="#d6c8a6" />
+              {/* Vehicle Image Slider */}
+              <VehicleImageSlider 
+                vehicles={allVehicles} 
+                onSelectVehicle={setSelectedVehicle}
+              />
             </div>
           </div>
         </div>

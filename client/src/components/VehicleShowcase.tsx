@@ -1,108 +1,132 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import Car from './3d/Car';
+import { vehicleModels, VehicleModel, VehicleType } from '@/lib/utils';
+import { VehicleImageSlider } from './VehicleImageSlider';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export default function VehicleShowcase() {
-  const [carColor, setCarColor] = useState('#d6c8a6'); // Default to primary beige color
-  const [rotationDirection, setRotationDirection] = useState('none');
+  const [selectedType, setSelectedType] = useState<VehicleType>('luxury');
+  const [selectedVehicle, setSelectedVehicle] = useState<VehicleModel>(vehicleModels.luxury[0]);
   
-  const colors = [
-    { name: "Classic Beige", value: "#d6c8a6" },
-    { name: "Metallic Blue", value: "#3b82f6" },
-    { name: "Vibrant Red", value: "#ef4444" },
-    { name: "Silver Gray", value: "#d1d5db" }
-  ];
-  
-  const specs = {
-    engine: "800cc",
-    fuelEfficiency: "18 km/l",
-    seating: "4 Persons",
-    transmission: "Manual"
+  // Define vehicle specifications dynamically based on selected vehicle
+  const getSpecs = (vehicle: VehicleModel) => {
+    const baseSpecs: Record<string, Record<string, string>> = {
+      'mehran': {
+        engine: "800cc",
+        fuelEfficiency: "18 km/l",
+        seating: "4 Persons",
+        transmission: "Manual"
+      },
+      'civic': {
+        engine: "1800cc",
+        fuelEfficiency: "14 km/l",
+        seating: "5 Persons",
+        transmission: "CVT / Manual"
+      },
+      'fortuner': {
+        engine: "2800cc",
+        fuelEfficiency: "10 km/l",
+        seating: "7 Persons",
+        transmission: "Automatic"
+      },
+      'hiace': {
+        engine: "2700cc",
+        fuelEfficiency: "9 km/l",
+        seating: "12 Persons",
+        transmission: "Manual"
+      }
+    };
+    
+    // Default specs for any vehicle
+    const defaultSpecs = {
+      engine: "1600cc",
+      fuelEfficiency: "12 km/l",
+      seating: "5 Persons",
+      transmission: "Manual"
+    };
+    
+    return baseSpecs[vehicle.id] || defaultSpecs;
   };
+  
+  const handleCategoryChange = (type: VehicleType) => {
+    setSelectedType(type);
+    setSelectedVehicle(vehicleModels[type][0]);
+  };
+  
+  const handleVehicleChange = (vehicle: VehicleModel) => {
+    setSelectedVehicle(vehicle);
+  };
+  
+  const specs = getSpecs(selectedVehicle);
   
   return (
     <section id="vehicle-showcase" className="py-16 bg-secondary text-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-on-scroll">
+        <div className="text-center mb-12 animate-on-scroll">
           <h2 className="font-heading font-bold text-3xl md:text-4xl mb-3">Interactive Vehicle Showcase</h2>
-          <p className="text-lg max-w-2xl mx-auto">Explore our vehicles with customizable options</p>
+          <p className="text-lg max-w-2xl mx-auto">Explore our extensive fleet with detailed specifications</p>
         </div>
+        
+        <Tabs defaultValue="luxury" onValueChange={(value) => handleCategoryChange(value as VehicleType)} className="mb-8">
+          <TabsList className="grid grid-cols-4 max-w-md mx-auto mb-8">
+            <TabsTrigger value="economy">Economy</TabsTrigger>
+            <TabsTrigger value="luxury">Luxury</TabsTrigger>
+            <TabsTrigger value="suv">SUVs</TabsTrigger>
+            <TabsTrigger value="commercial">Commercial</TabsTrigger>
+          </TabsList>
+        </Tabs>
         
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <div className="lg:w-1/2 w-full">
-            <div className="bg-secondary-light rounded-lg p-8 h-80 flex items-center justify-center relative">
-              {/* Simplified Car Component */}
-              <Car 
-                color={carColor} 
-                rotationDirection={rotationDirection}
+            <div className="rounded-lg h-80 flex items-center justify-center relative overflow-hidden">
+              {/* Vehicle Image Slider */}
+              <VehicleImageSlider 
+                vehicles={vehicleModels[selectedType]} 
+                onSelectVehicle={handleVehicleChange}
+                selectedVehicleId={selectedVehicle?.id}
               />
-              
-              {/* Rotation Controls */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4 z-10">
-                <button 
-                  className="bg-white text-secondary w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary transition"
-                  onClick={() => {
-                    setRotationDirection('left');
-                    setTimeout(() => setRotationDirection('none'), 1000);
-                  }}
-                  aria-label="Rotate left"
-                >
-                  <i className="fas fa-arrow-left"></i>
-                </button>
-                <button 
-                  className="bg-white text-secondary w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary transition"
-                  onClick={() => {
-                    setRotationDirection('right');
-                    setTimeout(() => setRotationDirection('none'), 1000);
-                  }}
-                  aria-label="Rotate right"
-                >
-                  <i className="fas fa-arrow-right"></i>
-                </button>
-              </div>
-              
-              {/* Color Options */}
-              <div className="absolute top-4 right-4 flex flex-col space-y-2 z-10">
-                {colors.map((color, index) => (
-                  <button 
-                    key={index}
-                    className={`w-8 h-8 rounded-full border-2 transition`}
-                    style={{ 
-                      backgroundColor: color.value,
-                      borderColor: color.value === carColor ? 'white' : 'transparent'
-                    }}
-                    onClick={() => setCarColor(color.value)}
-                    aria-label={`Change to ${color.name}`}
-                    title={color.name}
-                  />
-                ))}
-              </div>
             </div>
           </div>
           
           <div className="lg:w-1/2 w-full">
-            <div className="bg-secondary-light rounded-lg p-8 animate-on-scroll">
-              <h3 className="font-heading font-semibold text-2xl mb-4">Suzuki Mehran - A Pakistani Icon</h3>
-              <p className="mb-4">The Suzuki Mehran, Pakistan's most beloved economy car, offers reliability and affordability that's stood the test of time.</p>
+            <div className="bg-secondary-light rounded-lg p-6 md:p-8 animate-on-scroll shadow-lg">
+              <h3 className="font-heading font-semibold text-xl md:text-2xl mb-4">
+                {selectedVehicle.name}
+              </h3>
               
-              <div className="space-y-4 mb-6">
+              <p className="mb-4 text-sm md:text-base">
+                {selectedVehicle.name} offers an exceptional {selectedVehicle.category} driving experience with 
+                reliable performance and comfortable features, perfect for all your transportation needs.
+              </p>
+              
+              <div className="space-y-3 mb-6">
                 {Object.entries(specs).map(([key, value], index) => (
-                  <div key={index} className="flex justify-between border-b border-white/20 pb-2">
+                  <div key={index} className="flex justify-between border-b border-white/20 pb-2 text-sm md:text-base">
                     <span>{key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1')}</span>
                     <span className="font-medium">{value}</span>
                   </div>
                 ))}
+                <div className="flex justify-between border-b border-white/20 pb-2 text-sm md:text-base">
+                  <span>Daily Rate</span>
+                  <span className="font-medium text-primary">PKR {selectedVehicle.baseRate}</span>
+                </div>
               </div>
               
-              <div className="flex space-x-4">
-                <Button className="bg-primary hover:bg-primary-dark text-secondary font-medium py-2 px-4 rounded transition flex-1">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  className="bg-primary hover:bg-primary-dark text-secondary font-medium py-2 px-4 rounded transition flex-1"
+                  onClick={() => {
+                    const bookingForm = document.getElementById('booking');
+                    if (bookingForm) bookingForm.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
                   Rent Now
                 </Button>
                 <Button 
                   variant="outline" 
                   className="bg-white hover:bg-neutral-200 text-secondary font-medium py-2 px-4 rounded transition flex-1"
                 >
-                  More Details
+                  Details & Reviews
                 </Button>
               </div>
             </div>
