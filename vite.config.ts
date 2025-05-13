@@ -3,6 +3,9 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
+// Adjusting the base path for deployment (change this if needed)
+const basePath = process.env.NODE_ENV === "production" ? "/server/" : "/"; 
+
 export default defineConfig({
   plugins: [
     react(),
@@ -27,5 +30,6 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    base: basePath,  // Setting the base path to ensure assets are correctly linked
   },
 });
