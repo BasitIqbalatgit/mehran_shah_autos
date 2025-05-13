@@ -25,6 +25,7 @@ export default function Hero() {
               <span className="block">Reviving Legacy,</span>
               <span className="block text-primary">Driving Innovation</span>
             </h1>
+            <p className="font-cursive text-2xl mb-2 italic text-white/80">Experience the journey with us</p>
             <p className="text-lg mb-8 max-w-xl">
               From iconic classics to modern luxury vehicles, we bridge trusted heritage with cutting-edge automotive solutions.
             </p>

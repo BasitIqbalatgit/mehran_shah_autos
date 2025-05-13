@@ -21,9 +21,9 @@ export default function Header() {
   return (
     <header className={cn(
       "fixed w-full z-50 transition-all duration-300",
-      isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-3"
+      isScrolled ? "bg-white shadow-lg py-2 mx-auto my-2 rounded-full max-w-[95%] px-4" : "bg-transparent py-3 w-full px-4"
     )}>
-      <div className="container mx-auto px-4">
+      <div className={`container mx-auto ${isScrolled ? 'px-2' : 'px-4'}`}>
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
             {/* 3D Model Placeholder - In reality this would be a ThreeJS/R3F component */}
