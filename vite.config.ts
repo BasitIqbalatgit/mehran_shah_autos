@@ -4,7 +4,7 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 // Adjusting the base path for deployment (change this if needed)
-const basePath = process.env.NODE_ENV === "production" ? "/server/" : "/"; 
+const basePath =  "/server/" ; 
 
 export default defineConfig({
   plugins: [
