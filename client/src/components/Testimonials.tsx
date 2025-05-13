@@ -12,26 +12,26 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Ahmed Khan",
-    initials: "AK",
+    name: "BASIT IQBAL",
+    initials: "BI",
     role: "Business Owner",
-    location: "Karachi",
+    location: "Abbottabad",
     rating: 5,
     content: "I've been renting the classic Mehran for my business operations for years. The reliability and cost-effectiveness are unmatched. Mehran Shah Autos provides exceptional service and the vehicles are always well-maintained."
   },
   {
-    name: "Sana Ali",
-    initials: "SA",
+    name: "Fatima Aftab",
+    initials: "FA",
     role: "Corporate Executive",
-    location: "Lahore",
+    location: "Japan",
     rating: 4.5,
     content: "Our company leases a fleet of vehicles from Mehran Shah Autos. Their corporate solutions are comprehensive, and the dedicated account manager makes everything seamless. Highly recommended for businesses!",
     delay: 100
   },
   {
-    name: "Malik Hassan",
-    initials: "MH",
-    role: "Family Man",
+    name: "Malik Adnan Jaleel",
+    initials: "MA",
+    role: "Professor",
     location: "Islamabad",
     rating: 5,
     content: "Rented an SUV for our family trip to northern areas. The vehicle was in perfect condition, and the child seats were a great addition. The service was prompt, and the rates were very reasonable. Will definitely use again!",

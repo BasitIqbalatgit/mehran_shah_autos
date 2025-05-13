@@ -1,7 +1,10 @@
 import { vehicleModels, VehicleType } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-
+import img1 from "@/assets/car1.jfif";
+import img2 from "@/assets/car2.jfif";
+import img3 from "@/assets/car3.jfif";
+import img4 from "@/assets/car4.jfif";
 type CategoryInfo = {
   title: string;
   description: string;
@@ -27,7 +30,7 @@ const categories: CategoryInfo[] = [
     title: "Economy",
     description: "Fuel-efficient and affordable options for everyday commuting and budget-friendly travel.",
     type: "economy",
-    image: "https://images.unsplash.com/photo-1549399542-7e8f2e928464?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    image: img1,
     brands: getBrands("economy"),
     features: ["Fuel Efficient", "Budget Friendly", "Easy to Park", "Low Maintenance"]
   },
@@ -35,7 +38,7 @@ const categories: CategoryInfo[] = [
     title: "Luxury",
     description: "Premium vehicles with advanced features, sophisticated comfort, and exceptional performance.",
     type: "luxury",
-    image: "https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    image: img2,
     brands: getBrands("luxury"),
     features: ["Premium Comfort", "Advanced Technology", "Powerful Engine", "Elegant Design"],
     delay: 100
@@ -44,7 +47,7 @@ const categories: CategoryInfo[] = [
     title: "SUVs",
     description: "Spacious, versatile vehicles with higher ground clearance, perfect for families and adventurers.",
     type: "suv",
-    image: "https://images.unsplash.com/photo-1625395005127-bae85ed8d61a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    image: img3,
     brands: getBrands("suv"),
     features: ["Spacious Interior", "All-terrain Capability", "Enhanced Safety", "Higher Seating Position"],
     delay: 200
@@ -53,7 +56,7 @@ const categories: CategoryInfo[] = [
     title: "Commercial",
     description: "Reliable vans and light trucks designed for business transport, deliveries, and logistics needs.",
     type: "commercial",
-    image: "https://images.unsplash.com/photo-1545211801-7b30a09af7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    image: img4,
     brands: getBrands("commercial"),
     features: ["Large Capacity", "Heavy Duty", "Multiple Seating", "Business Ready"],
     delay: 300
